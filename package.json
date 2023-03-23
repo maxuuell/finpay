@@ -1,0 +1,23 @@
+{
+  "name": "finpay-user-service",
+  "version": "1.0.0",
+  "description": "finpay-api-developer-interview",
+  "main": "index.js",
+  "scripts": {
+    "start": "serverless offline"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.110",
+    "serverless": "^3.27.0",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-typescript": "^2.1.4",
+    "typescript": "^4.9.5"
+  }
+}

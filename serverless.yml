@@ -1,0 +1,43 @@
+app: finpass-user-service
+service: finpass-user-service
+frameworkVersion: "3"
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  environment:
+    DB_NAME: "maxwelldemers"
+    DB_HOST: "localhost"
+    DB_USER_NAME: "maxwelldemers" 
+    DB_DIALECT: "postgres" 
+    DB_PASSWORD: ""
+    DB_PORT: 5432 
+
+functions:
+  getUserById:
+    handler: src/user/handler.getUserById
+    events:
+      - http:
+          path: /user/{userId}
+          method: get
+  createUser:
+    handler: src/user/handler.createUser
+    events:
+      - http:
+          path: /user
+          method: post
+  updateUser:
+    handler: src/user/handler.updateUser
+    events:
+      - http:
+          path: /user/{userId}
+          method: patch
+  deleteUser:
+    handler: src/user/handler.deleteUser
+    events:
+      - http:
+          path: /user/{userId}
+          method: delete
